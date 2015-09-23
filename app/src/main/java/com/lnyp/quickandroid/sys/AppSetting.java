@@ -9,6 +9,7 @@ import com.lnyp.quickandroid.bean.User;
  * APP全局配置
  */
 public class AppSetting {
+
     // 引导界面的KEY值
     private static final String KEY_GUIDE_ACTIVITY = "guide_activity";
 
