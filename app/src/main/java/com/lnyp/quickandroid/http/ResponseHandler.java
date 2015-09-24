@@ -27,7 +27,7 @@ public abstract class ResponseHandler<T> extends TextHttpResponseHandler {
     @Override
     public void onFailure(int i, Header[] headers, String s, Throwable throwable) {
 
-        Toast.makeText(mContext, "ÍøÂç´íÎó", Toast.LENGTH_SHORT).show();
+        Toast.makeText(mContext, "ç½‘ç»œé”™è¯¯", Toast.LENGTH_SHORT).show();
 
         onFailure(throwable);
     }
@@ -35,8 +35,10 @@ public abstract class ResponseHandler<T> extends TextHttpResponseHandler {
     @Override
     public void onSuccess(int i, Header[] headers, String s) {
 
-//        ´¦Àíjson½âÎö
+//        å¤„ç†jsonè§£æ
         T data = FastJsonUtil.json2T(s, clazz);
+
+        System.out.println(data);
         onSuccess(data);
     }
 }

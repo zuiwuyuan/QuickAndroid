@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * ÓÃ»§±íÏà¹ØµÄÊı¾İ¿â²Ù×÷
+ * ç”¨æˆ·ä¿¡æ¯æ“ä½œç±»
  */
 public class UserDao {
 
@@ -21,6 +21,7 @@ public class UserDao {
     public UserDao(Context context) {
 
         this.context = context;
+
         try {
             helper = DatabaseHelper.getHeler(context);
             userDaoOpe = helper.getDao(User.class);
@@ -30,7 +31,7 @@ public class UserDao {
     }
 
     /**
-     * Ôö¼ÓÒ»¸öÓÃ»§
+     * æ·»åŠ ç”¨æˆ·
      *
      * @param user
      */
@@ -43,7 +44,7 @@ public class UserDao {
     }
 
     /**
-     * ²éÑ¯Ò»¸öÓÃ»§
+     * æ ¹æ®idæŸ¥è¯¢ç”¨æˆ·
      *
      * @param id
      */
@@ -58,7 +59,7 @@ public class UserDao {
     }
 
     /**
-     * ²éÑ¯ËùÓĞÓÃ»§
+     * æŸ¥è¯¢å…¨éƒ¨æ•°æ®
      *
      * @return
      */

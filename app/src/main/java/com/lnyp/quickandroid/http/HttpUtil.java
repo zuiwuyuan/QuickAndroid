@@ -29,7 +29,7 @@ public class HttpUtil {
         client.post(context, url, requestParams, responseHandler);
     }
 
-    // Èç¹ûÄãÓÖÌØÊâµÄÇëÇó£¬±ÈÈçÔö¼ÓÍ·ĞÅÏ¢µÈ£¬¿ÉÒÔµ¥¶ÀĞ´Ò»¸ö·½·¨£¬±ÈÈç
+    // å¦‚æœä½ åˆç‰¹æ®Šçš„è¯·æ±‚ï¼Œæ¯”å¦‚å¢åŠ å¤´ä¿¡æ¯ç­‰ï¼Œå¯ä»¥å•ç‹¬å†™ä¸€ä¸ªæ–¹æ³•ï¼Œæ¯”å¦‚
     public static void login(Context context, String url, RequestParams requestParams, ResponseHandler responseHandler) {
         client.addHeader("token", "wuyuanyoulei");
         client.get(context, url, requestParams, responseHandler);
@@ -37,9 +37,9 @@ public class HttpUtil {
 
     /*
     * @param path
-    *            ÒªÉÏ´«µÄÎÄ¼şÂ·¾¶
+    *            è¦ä¸Šä¼ çš„æ–‡ä»¶è·¯å¾„
     * @param url
-    *            ·şÎñ¶Ë½ÓÊÕURL
+    *            æœåŠ¡ç«¯æ¥æ”¶URL
     * @throws Exception
     */
     public static void uploadFile(final Context context, String path, String url,ResponseHandler responseHandler){
@@ -52,11 +52,11 @@ public class HttpUtil {
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
-            // ÉÏ´«ÎÄ¼ş
+            // ä¸Šä¼ æ–‡ä»¶
             client.post(url, params, responseHandler);
 
         } else {
-            Toast.makeText(context, "ÎÄ¼ş²»´æÔÚ", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "æ–‡ä»¶ä¸å­˜åœ¨", Toast.LENGTH_LONG).show();
         }
     }
 }

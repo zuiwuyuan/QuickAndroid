@@ -11,9 +11,15 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 数据库工具类
+ *
+ * 应用场景: 本地存储大量结构化的数据时，比如List集合数据
+ */
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
+
     private static final String DATABASE_NAME = "/helper.db3";
 
     private Map<String, Dao> daos = new HashMap<String, Dao>();
@@ -21,7 +27,6 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
-
 
     private static DatabaseHelper heler;
 

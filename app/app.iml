@@ -93,8 +93,8 @@
     <orderEntry type="library" exported="" name="universal-image-loader" level="project" />
     <orderEntry type="library" exported="" name="ormlite-core-4.48" level="project" />
     <orderEntry type="library" exported="" name="fastjson-1.1.34.android" level="project" />
-    <orderEntry type="library" exported="" name="gson-2.2.4" level="project" />
     <orderEntry type="library" exported="" name="butterknife-7.0.1" level="project" />
+    <orderEntry type="library" exported="" name="gson-2.2.4" level="project" />
     <orderEntry type="library" exported="" name="rxjava-1.0.4" level="project" />
     <orderEntry type="library" exported="" name="reservoir-2.1" level="project" />
     <orderEntry type="library" exported="" name="android-async-http-1.4.8" level="project" />
