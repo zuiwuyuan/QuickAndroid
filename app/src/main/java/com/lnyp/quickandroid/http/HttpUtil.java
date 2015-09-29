@@ -5,7 +5,6 @@ import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.RequestParams;
-import com.loopj.android.http.ResponseHandlerInterface;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -21,7 +20,7 @@ public class HttpUtil {
 
     public static void getReq(Context context, String url, RequestParams requestParams, ResponseHandler responseHandler) {
 
-        client.get(context, url, requestParams, (ResponseHandlerInterface) responseHandler);
+        client.get(context, url, requestParams, responseHandler);
     }
 
     public static void postReq(Context context, String url, RequestParams requestParams, ResponseHandler responseHandler) {
@@ -35,14 +34,16 @@ public class HttpUtil {
         client.get(context, url, requestParams, responseHandler);
     }
 
-    /*
-    * @param path
-    *            要上传的文件路径
-    * @param url
-    *            服务端接收URL
-    * @throws Exception
-    */
-    public static void uploadFile(final Context context, String path, String url,ResponseHandler responseHandler){
+    // 如果你只是想做图片上传，建议你使用青牛的图片上传，不仅性能优秀，而且帮助你节省不少服务器的消耗
+
+    /**
+     *
+     * @param context
+     * @param path 要上传的文件路径
+     * @param url 服务端接收URL
+     * @param responseHandler
+     */
+    public static void uploadFile(final Context context, String path, String url, ResponseHandler responseHandler) {
 
         File file = new File(path);
         if (file.exists() && file.length() > 0) {

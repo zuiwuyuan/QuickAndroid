@@ -17,6 +17,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * ViewPager工具类
  */
 public class ViewPagerHelper {
+
     // 判断是否自动滑动
     private boolean mIsAuto;
 
