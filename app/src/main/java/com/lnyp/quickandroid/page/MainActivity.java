@@ -38,7 +38,6 @@ public class MainActivity extends Activity {
             textView.setText("wuyuan");
 //            Toast.makeText(this, "wuyuan", Toast.LENGTH_SHORT).show();
         }
-
     }
 
 }
