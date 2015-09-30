@@ -8,6 +8,8 @@ Android快速开发框架
     项目还二次封装了了universal-image-loader框架，用于处理图片的下载缓存，有效的防治oom的发生。
     在数据的缓存处理上，同时提供了数据库相关和本地文件缓存相关的方法，可以根据需求，选择到底使用哪一种方式存取数据。
 
+    当然，项目还集成了ButterKnife，它是一个专注于Android系统的View注入框架，让你从此从这些烦人臃肿的代码中解脱出来。再也不用些写findViewById，或者是是setOnClickListener这样的代码啦。
+
     除此之外，ViewPagerHelper工具类可以帮助更简单的实现View组件的滑动，android-log可以帮助进行日志打印查看等。。。
 
 
@@ -32,7 +34,11 @@ Android快速开发框架
 
     Reservoir是一个简单的Android函数库，可以在磁盘上使用“键/值”对轻松地序列化并持久化对象。说白了，使用Reservoir，你可以把java对象进行序列化，并把它存储到磁盘上。当然，当你想从磁盘上查找到你保存的数据时，同样需要时用Reservoir。
 
-6. ViewPager工具类
+6. butterknife:
+
+    ButterKnife是一个专注于Android系统的View注入框架，让你从此从这些烦人臃肿的代码中解脱出来。
+
+7. ViewPager工具类
 
    对ViewPager进行了封装，通过它，可以更加方便的进行ViewPager的使用:
     构造方法： public ViewPagerHelper(boolean isAuto, ViewPager viewPager, List<View> views, LinearLayout indicatorParents,
@@ -47,7 +53,7 @@ Android快速开发框架
     示例：
         new ViewPagerHelper(false, mViewPager, views, viewPoints, R.mipmap.page_indicator_unfocused,R.mipmap.page_indicator_focused);
 
-7. Log日志管理:
+8. Log日志管理:
 
     android-log 是一个基于android.util.Log 类的扩展日志库，主要是添加一些功能方便调试。
 
