@@ -32,11 +32,9 @@ public class MainActivity extends Activity {
     @OnClick({R.id.button, R.id.button2})
     public void onClick(View view) {
         if (R.id.button == view.getId()) {
-//            Toast.makeText(this, "lining", Toast.LENGTH_SHORT).show();
             textView.setText("lining");
         } else {
             textView.setText("wuyuan");
-//            Toast.makeText(this, "wuyuan", Toast.LENGTH_SHORT).show();
         }
     }
 

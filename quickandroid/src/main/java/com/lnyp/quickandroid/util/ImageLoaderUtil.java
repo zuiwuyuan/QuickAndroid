@@ -20,7 +20,7 @@ import java.io.File;
  */
 public class ImageLoaderUtil {
 
-    private static final String EXTERNAL_FILE_DIR_PICTURE = "news/pictures";
+    private static final String EXTERNAL_FILE_DIR_PICTURE = "lnyp/pictures";
     private static ImageLoaderUtil instance = null;
 
     private ImageLoader mImageLoader;
@@ -31,7 +31,7 @@ public class ImageLoaderUtil {
     // 头像图片
     private DisplayImageOptions mUserHeadOptions;
 
-    private ImageLoaderUtil(Context context) {
+    private ImageLoaderUtil() {
         mImageLoader = ImageLoader.getInstance();
         mListItemOptions = new DisplayImageOptions.Builder()
                 // 设置图片Uri为空或是错误的时候显示的图片
@@ -68,14 +68,14 @@ public class ImageLoaderUtil {
 
     public synchronized static ImageLoaderUtil init(Context context) {
         if (instance == null) {
-            instance = new ImageLoaderUtil(context);
+            instance = new ImageLoaderUtil();
         }
 
         File cacheDir = context.getExternalFilesDir(EXTERNAL_FILE_DIR_PICTURE);
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
                 .threadPriority(Thread.NORM_PRIORITY - 2)
                 .denyCacheImageMultipleSizesInMemory()
-                // .imageDownloader(imageDownloader).imageDecoder(imageDecoder)
+                        // .imageDownloader(imageDownloader).imageDecoder(imageDecoder)
                 .discCacheFileNameGenerator(new Md5FileNameGenerator())
                 .tasksProcessingOrder(QueueProcessingType.LIFO)
                 .memoryCacheExtraOptions(360, 360)

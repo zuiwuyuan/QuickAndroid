@@ -7,8 +7,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -142,16 +142,20 @@ public class ViewPagerHelper {
 
         if (mIndicatorParents != null) {
             for (int i = 0; i < mViews.size(); i++) {
-                int width = ActivityUtil.dip2px(mViewPager.getContext(), 8); // 像素
-                int margin = ActivityUtil.dip2px(mViewPager.getContext(), 5);
+//                int width = ActivityUtil.dip2px(mViewPager.getContext(), 8); // 像素
+                int margin = ActivityUtil.dip2px(mViewPager.getContext(), 10);
 
-                View view = new View(mViewPager.getContext());
+                ImageView view = new ImageView(mViewPager.getContext());
+
                 view.setBackgroundResource(mUnSelect);
 
-                LayoutParams params = new LayoutParams(width, width);
+//                // 单位是px的
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
                 if (i < mViews.size() - 1) {
                     params.rightMargin = margin;
                 }
+
                 mIndicatorParents.addView(view, params);
             }
 

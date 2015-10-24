@@ -3,15 +3,16 @@ Android快速开发框架
 
 项目介绍：
 
-    QuickAndroid是一个免费的开源的、简易的Android开发框架，其开发宗旨是简单、快速的进行Android应用程序的开发，
-    它封装了AsyncHttpClientt框架，可以快速的进行网络请求回调处理。尤其当网络数据时通过json格式时，更是直接集成了fastjson，更加快速的帮助解析数据。
+    QuickAndroid是一个免费的开源的、简易的Android开发框架，其开发宗旨是简单、快速的进行Android应用程序的开发。
+    
+    它对AsyncHttpClientt框架进行了二次封装，可以快速的进行网络请求回调处理。而且，项目还集成了Fastjson，当网络数据时通过json格式传输时，可以更加快速高效的进行数据的解析操作。
     项目还二次封装了了universal-image-loader框架，用于处理图片的下载缓存，有效的防治oom的发生。
+    
     在数据的缓存处理上，同时提供了数据库相关和本地文件缓存相关的方法，可以根据需求，选择到底使用哪一种方式存取数据。
-
+    
     当然，项目还集成了ButterKnife，它是一个专注于Android系统的View注入框架，让你从此从这些烦人臃肿的代码中解脱出来。再也不用些写findViewById，或者是是setOnClickListener这样的代码啦。
-
+    
     除此之外，ViewPagerHelper工具类可以帮助更简单的实现View组件的滑动，android-log可以帮助进行日志打印查看等。。。
-
 
 
 1. HTTP框架: AsyncHttpClient
@@ -34,7 +35,7 @@ Android快速开发框架
 
     Reservoir是一个简单的Android函数库，可以在磁盘上使用“键/值”对轻松地序列化并持久化对象。说白了，使用Reservoir，你可以把java对象进行序列化，并把它存储到磁盘上。当然，当你想从磁盘上查找到你保存的数据时，同样需要时用Reservoir。
 
-6. butterknife:
+6. ButterKnife:
 
     ButterKnife是一个专注于Android系统的View注入框架，让你从此从这些烦人臃肿的代码中解脱出来。
 

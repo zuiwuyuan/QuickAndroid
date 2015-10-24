@@ -9,11 +9,15 @@ import com.loopj.android.http.RequestParams;
 import java.io.File;
 import java.io.FileNotFoundException;
 
+/**
+ * 网络请求工具类
+ */
 public class HttpUtil {
 
     private static AsyncHttpClient client = new AsyncHttpClient();
 
     static {
+
         client.setTimeout(5 * 1000);
         client.setConnectTimeout(5 * 1000);
     }
@@ -28,14 +32,13 @@ public class HttpUtil {
         client.post(context, url, requestParams, responseHandler);
     }
 
-    // 如果你又特殊的请求，比如增加头信息等，可以单独写一个方法，比如
+    // 如果你特殊特殊的请求，比如增加头信息等，可以单独写一个方法，比如
     public static void login(Context context, String url, RequestParams requestParams, ResponseHandler responseHandler) {
-        client.addHeader("token", "wuyuanyoulei");
+//        client.addHeader("token", "wuyuanyoulei");
         client.get(context, url, requestParams, responseHandler);
     }
 
-    // 如果你只是想做图片上传，建议你使用七牛的图片上传，不仅性能优秀，而且帮助你节省不少服务器的消耗
-
+    // 如果你只是想做图片上传，建议你使用七牛的图片上传，不仅性能优秀，集成方便，而且帮助你节省不少服务器的消耗
     /**
      * @param context
      * @param path            要上传的文件路径
@@ -48,7 +51,7 @@ public class HttpUtil {
         if (file.exists() && file.length() > 0) {
             RequestParams params = new RequestParams();
             try {
-                params.put("uploadfile", file);
+                params.put("file", file);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
