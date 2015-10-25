@@ -71,7 +71,7 @@ public class GudieActivity extends BaseActivity {
             }
         });
 
-        new ViewPagerHelper(false, mViewPager, views, viewPoints, R.mipmap.page_indicator_unfocused,
-                R.mipmap.page_indicator_focused);
+        new ViewPagerHelper(false, mViewPager, views, viewPoints, R.mipmap.page_indicator_focused,
+                R.mipmap.page_indicator_unfocused);
     }
 }

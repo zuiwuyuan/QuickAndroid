@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.apkfuns.logutils.LogUtils;
 import com.lnyp.quickandroid.R;
 import com.lnyp.quickandroid.sys.AppSetting;
 
@@ -33,8 +34,12 @@ public class MainActivity extends Activity {
     public void onClick(View view) {
         if (R.id.button == view.getId()) {
             textView.setText("lining");
+
+            LogUtils.e("lining");
+
         } else {
             textView.setText("wuyuan");
+            LogUtils.e("wuyuan");
         }
     }
 

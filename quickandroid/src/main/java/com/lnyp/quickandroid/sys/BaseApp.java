@@ -1,10 +1,9 @@
 package com.lnyp.quickandroid.sys;
 
-
 import android.app.Application;
 
 import com.anupcowkur.reservoir.Reservoir;
-import com.github.snowdream.android.util.Log;
+import com.apkfuns.logutils.LogUtils;
 import com.lnyp.quickandroid.util.ImageLoaderUtil;
 
 public class BaseApp extends Application {
@@ -25,5 +24,11 @@ public class BaseApp extends Application {
         ImageLoaderUtil.init(this);
 
         cache = AppCache.init(this);
+
+        // 配置日志是否输出(默认true)
+        LogUtils.configAllowLog = true;
+
+        // 配置日志前缀
+        LogUtils.configTagPrefix = "quickandroid-";
     }
 }

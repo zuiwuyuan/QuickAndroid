@@ -31,5 +31,5 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.anupcowkur:reservoir:2.1'
     compile 'com.jakewharton:butterknife:7.0.1'
-    compile 'com.github.snowdream.android.util:log:1.2.0'
+    compile 'com.apkfuns.logutils:library:1.0.6'
 }

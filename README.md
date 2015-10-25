@@ -56,14 +56,12 @@ Android快速开发框架
 
 8. Log日志管理:
 
-    android-log 是一个基于android.util.Log 类的扩展日志库，主要是添加一些功能方便调试。
+    LogUtils是一个基于android.util.Log 类的扩展日志库，主要是添加一些功能方便调试。
+    github地址： https://github.com/pengwei1024/LogUtils
 
     主要支持特性如下：
 
-    1、全局启用/关闭日志
-
-    2、设置全局标签和局部标签
-
-    3、支持将日志写入本地文件
-
-    4、支持Maven，Gradle等
+    1. 支持直接打印数据集合,如List、Set、Map、数组等
+    2. 全局配置log输出
+    3. 不需要设置tag
+    4. 准确显示调用方法、行，快速定位所在文件位置.

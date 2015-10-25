@@ -14,10 +14,9 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * ViewPager工具类
- */
+ * 方便使用ViewPager
+ **/
 public class ViewPagerHelper {
-
     // 判断是否自动滑动
     private boolean mIsAuto;
 
@@ -33,6 +32,8 @@ public class ViewPagerHelper {
 
     private int mUnSelect;
 
+    private OnViewInstantiateListener mOnViewInstantiateListener;
+
     // 一个提供原子操作的Integer的类
     private AtomicInteger atomicInteger = new AtomicInteger(0);
 
@@ -42,7 +43,7 @@ public class ViewPagerHelper {
     /*
      * 每隔固定时间切换广告栏图片
      */
-    public final Handler viewHandler = new Handler() {
+    private final Handler viewHandler = new Handler() {
 
         @Override
         public void handleMessage(Message msg) {
@@ -51,11 +52,18 @@ public class ViewPagerHelper {
             } else {
                 mViewPager.setCurrentItem(msg.what);
             }
+
             super.handleMessage(msg);
         }
 
     };
 
+    /**
+     * View 被附加到viewpager的时候调用
+     */
+    public interface OnViewInstantiateListener {
+        public void onInstantiate(int position, View view);
+    }
 
     public ViewPagerHelper(boolean isAuto, ViewPager viewPager, List<View> views, LinearLayout indicatorParents,
                            int selectDrawableRes, int unselectDrawableRes) {
@@ -81,6 +89,18 @@ public class ViewPagerHelper {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
         }
+    }
+
+    public ViewPager getViewPager() {
+        return mViewPager;
+    }
+
+    public List<View> getViews() {
+        return mViews;
+    }
+
+    public void setOnViewInstantiateListener(OnViewInstantiateListener listener) {
+        mOnViewInstantiateListener = listener;
     }
 
     private void init() {
@@ -114,14 +134,16 @@ public class ViewPagerHelper {
             public Object instantiateItem(ViewGroup container, int position) {
                 View view = mViews.get(position);
                 container.addView(view, 0);
+
+                if (mOnViewInstantiateListener != null) {
+                    mOnViewInstantiateListener.onInstantiate(position, view);
+                }
+
                 return mViews.get(position);
             }
         };
 
-//        mViewPager.setPageTransformer();
-
         mViewPager.setAdapter(mPagerAdapter);
-
         mViewPager.setOnPageChangeListener(new OnPageChangeListener() {
             @Override
             public void onPageScrollStateChanged(int state) {
