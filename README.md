@@ -25,6 +25,8 @@ Android快速开发框架
 
     FastJson是效率最快的Json解析库，项目封装了FastJson工具类FastJsonUtil.java，可通过其直接进行json的解析。
 
+    http://git.oschina.net/wenshao/fastjson
+
 3. 图片加载缓存框架:universal-image-loader
 
     众所周知的图片加载缓存框架，效率高，效果好，使用简单，项目封装了imageLoader工具类ImageLoaderUtil.java，可以直接使用其进行图片缓存。
@@ -70,7 +72,20 @@ Android快速开发框架
     http://blog.csdn.net/lmj623565791/article/details/40794879
     http://blog.csdn.net/lmj623565791/article/details/40920453
 
-8. ViewPager工具类
+8. 时间日期处理框架Joda-time
+
+    Joda-Time提供了一组Java类包用于处理包括ISO8601标准在内的date和time。可以利用它把JDK Date和Calendar类完全替换掉，而且仍然能够提供很好的集成。
+
+    Joda-Time主要的特点包括：
+
+    1. 易于使用:Calendar让获取"正常的"的日期变得很困难，使它没办法提供简单的方法，而Joda-Time能够 直接进行访问域并且索引值1就是代表January。
+    2. 易于扩展：JDK支持多日历系统是通过Calendar的子类来实现，这样就显示的非常笨重而且事实 上要实现其它日历系统是很困难的。Joda-Time支持多日历系统是通过基于Chronology类的插件体系来实现。
+    3. 提供一组完整的功能：它打算提供 所有关系到date-time计算的功能．Joda-Time当前支持8种日历系统，而且在将来还会继续添加，有着比JDK Calendar更好的整体性能等等。
+
+    http://persevere.iteye.com/blog/1755237
+    http://dl2.iteye.com/upload/attachment/0078/5111/b020fc38-577a-3ce1-8645-3cf9bd6a7a00.pdf
+
+9. ViewPager工具类
 
    对ViewPager进行了封装，通过它，可以更加方便的进行ViewPager的使用:
     构造方法： public ViewPagerHelper(boolean isAuto, ViewPager viewPager, List<View> views, LinearLayout indicatorParents,
@@ -85,7 +100,7 @@ Android快速开发框架
     示例：
         new ViewPagerHelper(false, mViewPager, views, viewPoints, R.mipmap.page_indicator_unfocused,R.mipmap.page_indicator_focused);
 
-9. Log日志管理:
+10. Log日志管理:
 
     LogUtils是一个基于android.util.Log 类的扩展日志库，主要是添加一些功能方便调试。
     github地址： https://github.com/pengwei1024/LogUtils
