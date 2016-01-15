@@ -6,7 +6,9 @@ import android.widget.Toast;
 import com.lnyp.quickandroid.util.FastJsonUtil;
 import com.loopj.android.http.TextHttpResponseHandler;
 
-import org.apache.http.Header;
+import cz.msebera.android.httpclient.Header;
+
+
 
 public abstract class ResponseHandler<T> extends TextHttpResponseHandler {
 
