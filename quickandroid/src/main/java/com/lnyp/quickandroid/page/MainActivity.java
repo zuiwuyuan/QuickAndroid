@@ -1,23 +1,20 @@
 package com.lnyp.quickandroid.page;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
 import com.apkfuns.logutils.LogUtils;
 import com.lnyp.quickandroid.R;
 import com.lnyp.quickandroid.sys.AppSetting;
+import com.lnyp.quickandroid.util.DateUtil;
 
-import butterknife.Bind;
+import java.util.Date;
+
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
-public class MainActivity extends Activity {
-
-    @Bind(R.id.textView)
-    public TextView textView;
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,21 +23,38 @@ public class MainActivity extends Activity {
 
         ButterKnife.bind(this);
 
+        applyKitKatTranslucency();
+
         // 设置引导页关闭
         AppSetting.init(this).setGuideFlag(true);
     }
 
-    @OnClick({R.id.button, R.id.button2})
+    @OnClick({R.id.button1, R.id.button2, R.id.button3, R.id.button4, R.id.button5, R.id.button6})
     public void onClick(View view) {
-        if (R.id.button == view.getId()) {
-            textView.setText("lining");
+        switch (view.getId()) {
 
-            LogUtils.e("lining");
+            case R.id.button1:
+                LogUtils.e(DateUtil.formatDateTime1(new Date()));
+                break;
 
-        } else {
-            textView.setText("wuyuan");
-            LogUtils.e("wuyuan");
+            case R.id.button2:
+                LogUtils.e(DateUtil.formatDateTime2(new Date()));
+                break;
+
+            case R.id.button3:
+                LogUtils.e(DateUtil.formatDateTime1(System.currentTimeMillis()));
+                break;
+
+            case R.id.button4:
+                LogUtils.e(DateUtil.formatDateTime2(System.currentTimeMillis()));
+                break;
+            case R.id.button5:
+                LogUtils.e(DateUtil.parseDateTime1("2016-1-16 12:52:39"));
+                break;
+
+            case R.id.button6:
+                LogUtils.e(DateUtil.parseDateTime2("2016-1-16 12:52"));
+                break;
         }
     }
-
 }

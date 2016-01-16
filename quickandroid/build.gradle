@@ -32,4 +32,6 @@ dependencies {
     compile 'com.anupcowkur:reservoir:2.1'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.apkfuns.logutils:library:1.0.6'
+    compile 'joda-time:joda-time:2.9.1'
+    compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
 }
