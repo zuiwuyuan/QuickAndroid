@@ -45,7 +45,7 @@ Android快速开发框架
     http://blog.csdn.net/lmj623565791/article/details/39121377
     http://blog.csdn.net/lmj623565791/article/details/39122981
 
-
+    代码混淆： http://proliang.com/proguard-ormlite.html
 5. 数据本地缓存: Reservoir（保存数据量小，可能会及时更新、删除的数据，比如用户信息、true/false等）
 
     Reservoir是一个简单的Android函数库，可以在磁盘上使用“键/值”对轻松地序列化并持久化对象。说白了，使用Reservoir，你可以把java对象进行序列化，并把它存储到磁盘上。当然，当你想从磁盘上查找到你保存的数据时，同样需要时用Reservoir。
