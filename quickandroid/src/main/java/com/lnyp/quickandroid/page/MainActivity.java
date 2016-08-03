@@ -5,6 +5,8 @@ import android.view.View;
 
 import com.apkfuns.logutils.LogUtils;
 import com.lnyp.quickandroid.R;
+import com.lnyp.quickandroid.http.HttpUtil;
+import com.lnyp.quickandroid.http.ResponseHandler;
 import com.lnyp.quickandroid.sys.AppSetting;
 import com.lnyp.quickandroid.util.DateUtil;
 
@@ -34,7 +36,19 @@ public class MainActivity extends BaseActivity {
         switch (view.getId()) {
 
             case R.id.button1:
-                LogUtils.e(DateUtil.formatDateTime1(new Date()));
+//                LogUtils.e(DateUtil.formatDateTime1(new Date()));
+                HttpUtil.getReq(this, "http://221.226.64.10:8081/thbjk/getLogin?account=oyp&pwd=111111", null, new ResponseHandler(this,null) {
+                    @Override
+                    public void onSuccess(Object result) {
+                        LogUtils.e("result:" + result);
+                    }
+
+                    @Override
+                    public void onFailure(Throwable throwable) {
+                        LogUtils.e("throwable:" + throwable);
+                    }
+                });
+
                 break;
 
             case R.id.button2:

@@ -36,6 +36,7 @@ public abstract class ResponseHandler<T> extends TextHttpResponseHandler {
 
     @Override
     public void onSuccess(int i, Header[] headers, String s) {
+        System.out.println(s);
 
 //        处理json解析
         T data = FastJsonUtil.json2T(s, clazz);
